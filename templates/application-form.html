@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>Application Form</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<!--Bootstrap container-->
+<div class="container">
+
+<!--Form Header-->
+  <div class="row">
+    <section class="col col-xs-4 col-md-6 col-lg-12">
+      <h1>Application Form</h1>
+      <p>Please fill in the following information to apply to our company.</p>
+    </section>
+  </div>
+
+<!-- Form with a Post request -->
+  <div class="row">
+    <form class="col col-xs-4 col-md-6 col-lg-12" action="/application-success">
+      First Name 
+      <input type="text" name="first-name" required><br><br>
+
+      <strong>Last Name</strong> 
+      <input type="text" name="last-name" required><br><br>
+
+      Salary Requirements 
+      <input type="number" name="first_name"><br><br>
+
+      Which job are you applying for? 
+      <select name="job">
+      <option value="software-engineer">Software Engineer</option>
+      <option value="qa-engineer">QA Engineer</option>
+      <option value="product-manager">Product Manager</option>
+      </select><br><br>
+
+      <!--submit button-->
+      <input type="submit">
+
+    </form>
+<!--End Bootstrap container-->
+</div>
+
+
+</body>
+</html>
