@@ -22,8 +22,23 @@ def view_homepage():
 def view_application_form():
     '''Display application-form for job application.'''
 
-    return render_template("application-form.html")
+    return render_template("application-form.html", 
+        jobs_list=["Software Engineer", "QA Enginner", "Product Manager"])
 
+@app.route('/application-success', methods=["post"])
+def process_form():
+    '''Processes the form.'''
+
+    first_name = request.form.get("first-name")
+    last_name = request.form.get("last-name")
+    salary = request.form.get("salary")
+    user_job_choice = request.form.get("jobs_list")
+    salary_text = "${:,.2f}".format(int(salary))
+    return render_template("application-response.html",
+                            first_name=first_name, 
+                            last_name=last_name,
+                            salary=salary_text,
+                            user_choice=user_job_choice)
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
