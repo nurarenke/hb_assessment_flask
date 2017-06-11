@@ -23,7 +23,7 @@ def view_application_form():
     '''Display application-form for job application.'''
 
     return render_template("application-form.html", 
-        jobs_list=["Software Engineer", "QA Enginner", "Product Manager"])
+        jobs_list=["Software Engineer", "QA Engineer", "Product Manager"])
 
 @app.route('/application-success', methods=["post"])
 def process_form():

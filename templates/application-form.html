@@ -1,24 +1,23 @@
 <!doctype html>
 <html>
 <head>
-    <title>Application Form</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    {% extends 'base.html' %}
+    {% block title %}Application Form{% endblock %}
 </head>
 <body>
-<!--Bootstrap container-->
-<div class="container">
+{% block content %}
 
 <!--Form Header-->
   <div class="row">
     <section class="col col-xs-4 col-md-6 col-lg-6">
-      <h1>Application Form</h1>
+      <h2>Application Form</h2>
       <p>Please fill in the following information to apply to our company.</p>
     </section>
   </div>
 
-<!-- Form with a Post request -->
+<!-- Form with a post request -->
   <div class="row">
+
     <form class="col col-xs-4 col-md-6 col-lg-6" action="/application-success" method="post">
       First Name 
       <input type="text" name="first-name" required><br><br>
@@ -38,11 +37,8 @@
 
       <!--submit button-->
       <input type="submit">
-
     </form>
-<!--End Bootstrap container-->
-</div>
 
-
+{% endblock %}
 </body>
 </html>

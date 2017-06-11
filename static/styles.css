@@ -1,10 +1,10 @@
-/* Your styles can go here. */
 input{
-
     background-color: yellow;
 }
 
 section p {
-
-    border: black 2px solid;
+    border-radius: 5px;
+    border: grey 1px solid;
+    padding: 10px;
 }
+
