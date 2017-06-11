@@ -1,4 +1,4 @@
-input{
+select, .form-control, .btn-default {
     background-color: yellow;
 }
 
@@ -6,5 +6,9 @@ section p {
     border-radius: 5px;
     border: grey 1px solid;
     padding: 10px;
+}
+
+#last-name {
+    font-weight: bold;
 }
 

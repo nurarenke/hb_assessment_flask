@@ -9,7 +9,7 @@
 
 <!--Form Header-->
   <div class="row">
-    <section class="col col-xs-4 col-md-6 col-lg-6">
+    <section class="col col-xs-12">
       <h2>Application Form</h2>
       <p>Please fill in the following information to apply to our company.</p>
     </section>
@@ -17,27 +17,50 @@
 
 <!-- Form with a post request -->
   <div class="row">
+    <section class="col col-xs-12">
+      <form class="form-horizontal" action="/application-success" method="post">
+        <div class="form-group">
+          <label for="first-name" class="col-sm-2 control-label">First Name</label> 
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="first-name" required><br><br>
+          </div>
+        </div>
 
-    <form class="col col-xs-4 col-md-6 col-lg-6" action="/application-success" method="post">
-      First Name 
-      <input type="text" name="first-name" required><br><br>
+        <div class="form-group">
+          <label for="last-name" class="col-sm-2 control-label">Last Name</label> 
+          <div class="col-sm-10">
+            <input class="form-control" id="last-name" type="text" name="last-name" required><br><br>
+          </div>
+        </div>
 
-      <strong>Last Name</strong> 
-      <input type="text" name="last-name" required><br><br>
+        <div class="form-group">
+          <label for="salary" class="col-sm-2 control-label">Salary Requirements</label> 
+          <div class="col-sm-10">
+            <input class="form-control" type="number" name="salary" required><br><br>
+          </div>
+        </div>
 
-      Salary Requirements 
-      <input type="number" name="salary"><br><br>
+        <div class="form-group">
+          <label for="jobs_list" class="col-sm-2 control-label">Which job are you applying for?</label> 
+          <div class="col-sm-10">
+            <select name="jobs_list">
+              {% for job in jobs_list %}
+              <option value="{{ job }}">{{ job }}</option>
+              {% endfor %}
+            </select><br><br>
+          </div>
+        </div>
 
-      Which job are you applying for? 
-      <select name="jobs_list">
-      {% for job in jobs_list %}
-        <option value="{{ job }}">{{ job }}</option>
-      {% endfor %}
-      </select><br><br>
+        <!--submit button-->
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
 
-      <!--submit button-->
-      <input type="submit">
-    </form>
+      </form>
+    </section>
+  </div>
 
 {% endblock %}
 </body>
